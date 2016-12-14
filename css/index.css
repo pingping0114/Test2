@@ -1,0 +1,317 @@
+/*主体盒子*/
+.jd_layout{
+    width:100%;
+    max-width:640px;/*设计图原因不让他放大*/
+    min-width:300px;/*为了更好的布局*/
+    margin: 0 auto;
+    /*height:1000px;
+    background:red;
+    position:relative;*/
+}
+
+/*头部搜索*/
+.jd_header{
+    position:fixed;/*是以window最外层容器开始计算的*/
+    left:0;
+    top:0;
+    width:100%;
+    height:40px;
+    z-index: 1000;
+}
+
+.jd_header > .jd_header_box{
+    width:100%;
+    max-width:640px;
+    min-width:300px;
+    height:40px;
+    margin: 0 auto;
+    background:rgba(201,21,35,0.85);
+    position:relative;
+}
+.jd_header > .jd_header_box > .icon_logo {
+    width:60px;
+    height:36px;
+    position: absolute;
+    //top:0;
+    //left:0;
+    background-position: 0 -103px;
+}
+.jd_header > .jd_header_box > .login{
+    width:50px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    color:white;
+    position: absolute;
+    right:0;
+    top:0;
+}
+
+.jd_header > .jd_header_box > form{
+    width:100%;
+    padding-left:75px;
+    padding-right:50px;
+    height:40px;
+    padding-top:5px;
+    position:relative;
+}
+
+.jd_header > .jd_header_box > form > input{
+    width:100%;
+    height:30px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius:10px;
+    border-radius:15px;
+    padding-left:30px;
+}
+
+.jd_header > .jd_header_box > form > .icon_search{
+    width:20px;
+    height:20px;
+    position: absolute;
+    background-position:  -60px -109px;
+    left:85px;
+    top:10px;
+}
+
+/*轮播图*/
+.jd_lunbo{
+    width:100%;
+    //height:100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.jd_lunbo > ul:first-child{
+    width:1000%;
+    transform: translateX(-10%);
+    -webkit-transform: translateX(-10%);/*用css3竟可能做 webkit 兼容*/
+    //height:100%;
+}
+
+.jd_lunbo > ul:first-child > li{
+    width:10%;
+    float:left;
+ }
+
+.jd_lunbo > ul:first-child > li> a{
+    width:100%;
+    display:block;
+
+}
+/*
+消除image 文泵 基线留下的空隙三个方法
+1. block
+2. text-align: middle
+3. 父容器的font-size:0
+*/
+.jd_lunbo > ul:first-child > li > a > img{
+    width:100%;
+    display:block;
+}
+
+.jd_lunbo > ul:last-child{
+    /*设置绝对定位的居中, 必须给定宽度*/
+    position: absolute;
+    bottom:6px;
+    left:50%;
+    width:124px;
+    margin-left:-62px;
+    height:6px;
+}
+
+.jd_lunbo > ul:last-child > li{
+    height:6px;
+    width:6px;
+    //display:block;
+    float:left;
+    margin-left: 10px;
+    border: #fff solid 1px;
+    border-radius: 3px;
+}
+
+/*导航栏模块*/
+.jd_nav{
+    width:100%;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.jd_nav >  ul{
+    width:100%;
+    padding:10px 0;
+}
+
+.jd_nav >  ul > li{
+    width:20%;
+    float:left;
+}
+
+.jd_nav >  ul > li > a{
+    width:100%;
+    display:block;
+}
+
+.jd_nav >  ul > li > a > img{
+    width:40px;
+    height:40px;
+    display:block;
+    margin: 0 auto;
+}
+
+.jd_nav >  ul > li > a > p{
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+    padding:6px 0;
+}
+/**商品区*/
+.jd_product{
+    //width:100%;
+    padding: 0 5px;
+
+}
+
+.jd_product > .product_box{
+    width:100%;
+    //min-height:300px;
+    box-shadow: 0 0 1px #eee;
+    background: #fff;
+    margin-top:10px;
+}
+
+.jd_product > .product_box > .jd_product_tit{
+    height:32px;
+    line-height:32px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.jd_product > .product_box > .jd_product_tit.no_border{
+    border-bottom: none;
+}
+
+
+.jd_product > .product_box > .jd_product_tit >h3{
+    padding-left:20px;
+    font-weight: normal;
+    font-size:15px;
+    position:relative;
+}
+
+/*前面加个竖条用beforew伪类**/
+.jd_product > .product_box > .jd_product_tit >h3::before{
+    /*
+        转块3方式： display:block, position:absolute, float:left;
+    */
+    content:"";
+    position:absolute;
+    top:10px;
+    left:10px;
+    width:3px;
+    height:12px;
+    background:#d8505c;
+}
+
+/*商品秒杀*/
+.jd_sk{
+    width:100%;
+}
+
+.jd_sk .sk_icon{
+    background: url(../img/sk.png) no-repeat;
+    background-size: 65px;
+    width: 71px;
+    height: 23px;
+    display: block;
+    float: left;
+    margin-top: 4px;
+}
+.jd_sk .sk_time{
+    float: left;
+    margin-top: 8px;
+}
+.jd_sk .sk_time > span{
+    margin-left:3px;
+    float: left;
+    width:15px;
+    height:15px;
+    line-height:15px;
+    background:black;
+    color:white;
+    text-align:center;
+}
+
+.jd_sk .sk_time > span:nth-child(3n){
+    background:white;
+    color:black;
+}
+
+.jd_sk .jd_product_content > ul{
+    width:100%;
+    margin-top:10px;
+}
+.jd_sk .jd_product_content > ul >li{
+    width:33.333%;
+    float:left;
+}
+
+.jd_sk .jd_product_content > ul >li>a{
+    width:100%;
+    display:block;
+    border-right:1px solid #e0e0e0;
+}
+
+.jd_sk .jd_product_content > ul >li:last-child>a{
+
+    border-right:none;
+}
+
+.jd_sk .jd_product_content > ul >li>a>img{
+     width:64%;
+     display:block;
+     margin: 0 auto;
+ }
+
+.jd_sk .jd_product_content > ul >li> p{/*也可以定义.jd_sk .jd_product_content > ul >li为center*/
+     text-align: center;
+}
+/*
+    first-of-type 同级的同一类型的第一个
+    nth-of-type
+*/
+.jd_sk .jd_product_content > ul >li> p:first-of-type{
+    color: #d8505c;
+}
+
+.jd_sk .jd_product_content > ul >li> p:last-of-type{
+    text-decoration: line-through;
+    color: #666;
+}
+
+/*组合样式*/
+ .jd_product_content a:first-child{
+    background: red;
+}
+.jd_product_content a:nth-child(2){
+    background: green;
+}
+.jd_product_content a:last-child{
+    background: gray;
+}
+.w_50{
+    width:50%;
+    display: block;
+}
+.w_50 img{
+    width:100%;
+    display: block;
+}
+.l_border{
+    border-left:1px solid #e3e3e3;
+}
+.r_border{
+    border-right:1px solid #e3e3e3;
+}
+.b_border{
+    border-bottom:1px solid #e3e3e3;
+}
